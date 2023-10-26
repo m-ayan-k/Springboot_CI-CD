@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link data-th-href="@{/css/main.css?{id}(id=${timestamp})}" rel="stylesheet">
+    <title>Todo App</title>
+</head>
+<body>
+        <section class="main-section bg-light py-4 d-flex flex-column align-items-center">
+    <h1 class="text-center text-uppercase fw-bold mb-4">ToDo List</h1>
+    <main class="todo-container mx-inline">
+      <div class="todo-input-block bg-white shadow-lg rounded p-3 mb-4">
+        <label for="todo_entry" class="form-label fw-semibold">Enter your ToDo Heading</label>
+        <div class="d-flex gap-2 align-items-start">
+          <div class="d-flex flex-column w-100">
+            <input type="text" name="" id="todo_entry" class="form-control" placeholder="Enter your ToDo Item..." />
+            <small class="error-message text-danger fw-semibold" style="display: none;"></small>
+          </div>
+          <button type="button" id="submit_button" class="btn btn-primary col-4 px-1"> 
+            <i class="fa-solid fa-plus me-2 "></i> 
+            <span class="__text">Add ToDo Item</span>
+          </button>
+          <button type="button" id="update_button" class="btn btn-primary col-4 px-1" style="display: none;"> 
+            <i class="fa-solid fa-pencil me-2 "></i> 
+            <span class="__text">Update ToDo Item</span>
+          </button>
+          <button type="button" id="cancle_button" class="btn btn-outline-danger text-center" style="display: none;"> 
+            <i class="fa-solid fa-times pe-none"></i> 
+          </button>
+        </div>
+      </div>
+      <ul class="todo-list"></ul>
+    </main>
+  </section>
+
+<script data-th-src="@{/js/main.js}"></script>
+</body>
+
+</html>
